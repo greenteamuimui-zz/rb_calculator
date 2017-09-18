@@ -1,4 +1,4 @@
-require_relative 'redbubble_system'
+require_relative 'lib/redbubble_system'
 
 rb_system = RedBubbleSystem.new
 cartlist_json_location, catalog_json_location = ARGV
