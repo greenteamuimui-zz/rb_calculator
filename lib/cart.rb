@@ -15,6 +15,10 @@ class Cart
   end
 
   def calculate_price(price_service)
-
+    total = 0
+    @store.each do |item|
+      total += price_service.price_lookup(item)
+    end
+    total
   end
 end

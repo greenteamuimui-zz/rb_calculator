@@ -34,4 +34,16 @@ describe Cart do
       expect(cart.store.count).to eq(cartlist.count)
     end
   end
+
+  describe "#calculate_price" do
+
+    let(:price_service) do
+      double("price_service", "price_lookup" => 100)
+    end
+
+    it "returns the total price of the cart" do
+      cart.add_items(cartlist)
+      expect(cart.calculate_price(price_service)).to eq(200)
+    end
+  end
 end
