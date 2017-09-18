@@ -1,28 +1,20 @@
 require 'rspec'
 require 'cart_item'
+require 'json'
 
 describe CartItem do
 
-  let(:item_description_hash) do
-  [{
-      produc_type: "hoodie",
-      options: {
-        size: "small",
-        colour: "white",
-        print_location: "front"
-      },
-      artist_markup: 20,
-      quantity: 1
-    }]
+  let(:cartlist) do
+    JSON.parse(File.read("spec/json_examples/cart-4560.json"))
   end
-  subject(:cart_item) {CartItem.new(item_description_hash)}
+  subject(:cart_item) {CartItem.new(cartlist[0])}
 
   describe '#initialize' do
     it "sets a product type attribute" do
       expect(cart_item.product_type).to eq("hoodie")
     end
     it "sets a options attribute" do
-      expect(cart_item.options).to eq(item_description_hash["options"])
+      expect(cart_item.options).to eq(cartlist[0]["options"])
     end
     it "sets a artist markup percentage attribute" do
       expect(cart_item.artist_markup_percentage).not_to be_nil
