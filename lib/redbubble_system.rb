@@ -10,13 +10,13 @@ class RedBubbleSystem
     @catalog = JSON.parse(File.read("#{catalog_json_location.chomp}"))
     @cart = Cart.new
     @cart.add_items(cartlist)
-    p "The total price of this cart is #{display_price}"
+    print "The total price of this cart is #{display_price}\n"
   end
 
   def display_price
     raise "Catalog is empty" if @catalog.empty?
     price_service = PriceService.new(@catalog)
-    
+
     @cart.calculate_price(price_service)
   end
 end
