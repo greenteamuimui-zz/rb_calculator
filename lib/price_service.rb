@@ -1,6 +1,7 @@
 class PriceService
 
   def initialize(catalog)
+    @catalog = catalog
 
   end
 
