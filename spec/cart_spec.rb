@@ -16,7 +16,7 @@ describe Cart do
     end
   end
 
-  describe "add_items" do
+  describe "#add_items" do
 
     it "raises 'Cart list is empty' error when the cartlist is empty" do
       expect do
