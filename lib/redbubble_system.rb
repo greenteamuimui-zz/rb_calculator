@@ -10,7 +10,7 @@ class RedBubbleSystem
     @catalog = JSON.parse(File.read("#{catalog_json_location.chomp}"))
     @cart = Cart.new
     @cart.add_items(cartlist)
-    print "The total price of this cart is #{display_price}\n"
+    print "The total price of this cart is #{display_price} cents.\n"
   end
 
   def display_price

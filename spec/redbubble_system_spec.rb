@@ -23,7 +23,7 @@ describe RedBubbleSystem do
     end
 
     it "prints the total price of the cart to stdout" do
-      expect{rb_system.run(cartlist_json_location, catalog_json_location)}.to output("The total price of this cart is 4560\n").to_stdout
+      expect{rb_system.run(cartlist_json_location, catalog_json_location)}.to output("The total price of this cart is 4560 cents.\n").to_stdout
     end
   end
 end
